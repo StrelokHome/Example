@@ -1,15 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Example
 {
-    class Program
+    internal class Program
     {
         static void Main(string[] args)
         {
+            try
+            {
+                throw new NullReferenceException();
+                Console.WriteLine("After Null reference.");
+            }
+            catch (ArithmeticException)
+            {
+                Console.WriteLine("Print from catch");
+            }
+            Console.WriteLine("End....");
+            Console.ReadLine();
         }
     }
 }
