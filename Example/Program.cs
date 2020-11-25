@@ -4,19 +4,11 @@ namespace Example
 {
     internal class Program
     {
-        static void Main(string[] args)
+        string str1 = "Hello";
+        public static void Main()
         {
-            try
-            {
-                throw new NullReferenceException();
-                Console.WriteLine("After Null reference.");
-            }
-            catch (ArithmeticException)
-            {
-                Console.WriteLine("Print from catch");
-            }
-            Console.WriteLine("End....");
-            Console.ReadLine();
+            str1 += " World";
+            Console.WriteLine(str1);
         }
     }
 }
