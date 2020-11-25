@@ -4,11 +4,17 @@ namespace Example
 {
     internal class Program
     {
-        string str1 = "Hello";
-        public static void Main()
+        static void Main(string[] args)
         {
-            str1 += " World";
-            Console.WriteLine(str1);
+            int i = 0;
+            Console.Write(i++ + Calculate(i));
+            Console.WriteLine(i);
+            Console.ReadKey();
+        }
+        public static int Calculate(int i)
+        {
+            Console.Write(i++);
+            return i;
         }
     }
 }
