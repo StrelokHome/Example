@@ -1,25 +1,30 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Example
 {
     /// <summary>
-    /// Is there a way to modify ClassA so that you can you call the constructor with parameters,
-    /// when the Main method is called, without creating any other new instances of the ClassA?
+    /// What is the output of the program below? Explain your answer.    
+    /// Also, would the answer change if we were to replace 
+    /// await Task.Delay(5)  with 
+    /// Thread.Sleep(5) ? Why or why not?
     /// </summary>
-    internal class Program
+    class Program
     {
-        class ClassA
+        private static string result;
+        static void Main()
         {
-            public ClassA()
-            { }
-            public ClassA(int pValue)
-            {
-                Console.WriteLine("Congratulations !! You have refactored the code.");
-            }
+            Task<string> str = SaySomething();
+            Console.WriteLine(result);
         }
-        static void Main(string[] args)
+        static async Task<string> SaySomething()
         {
-            ClassA refA = new ClassA();
+            await Task.Delay(5); //Thread.Sleep(5)
+            result = "Hello world!";
+            return "Something";
         }
     }
+
+
 }
