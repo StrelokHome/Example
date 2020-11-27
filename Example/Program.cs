@@ -2,19 +2,24 @@
 
 namespace Example
 {
+    /// <summary>
+    /// Is there a way to modify ClassA so that you can you call the constructor with parameters,
+    /// when the Main method is called, without creating any other new instances of the ClassA?
+    /// </summary>
     internal class Program
     {
+        class ClassA
+        {
+            public ClassA()
+            { }
+            public ClassA(int pValue)
+            {
+                Console.WriteLine("Congratulations !! You have refactored the code.");
+            }
+        }
         static void Main(string[] args)
         {
-            int i = 0;
-            Console.Write(i++ + Calculate(i));
-            Console.WriteLine(i);
-            Console.ReadKey();
-        }
-        public static int Calculate(int i)
-        {
-            Console.Write(i++);
-            return i;
+            ClassA refA = new ClassA();
         }
     }
 }
